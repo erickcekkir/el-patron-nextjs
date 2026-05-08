@@ -1,7 +1,11 @@
 "use client";
 
+<<<<<<< HEAD
 import MediumButton from "@/components/button/MediumButton";
 import LargeButton from "@/components/button/LargeButton";
+=======
+import CarouselButton from "@/components/carouselButton/CarouselButton";
+>>>>>>> main
 
 /* eslint-disable @next/next/no-img-element */
 
