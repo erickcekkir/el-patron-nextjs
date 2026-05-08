@@ -1,11 +1,8 @@
 "use client";
 
-<<<<<<< HEAD
 import MediumButton from "@/components/button/MediumButton";
 import LargeButton from "@/components/button/LargeButton";
-=======
 import CarouselButton from "@/components/carouselButton/CarouselButton";
->>>>>>> main
 
 /* eslint-disable @next/next/no-img-element */
 
@@ -118,14 +115,10 @@ export default function Home() {
         <section id="structure">
           <h2>Estrutura e espaço físico</h2>
           <div className="carrousel">
-            <button
-              type="button"
-              className="carousel-button"
-              onClick={carrouselLeftClick}
-            >
-              <span className="material-symbols-outlined"> chevron_left </span>
-            </button>
-
+            <CarouselButton
+              carouselFunction={carrouselLeftClick}
+              direction="left"
+            />
             <ul className="carrousel-list">
               <li className="carrousel-img">
                 <img
@@ -152,13 +145,10 @@ export default function Home() {
                 />
               </li>
             </ul>
-            <button
-              type="button"
-              className="carousel-button"
-              onClick={carrouselRightClick}
-            >
-              <span className="material-symbols-outlined"> chevron_right </span>
-            </button>
+            <CarouselButton
+              carouselFunction={carrouselRightClick}
+              direction="right"
+            />
           </div>
         </section>
 
