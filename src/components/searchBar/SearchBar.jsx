@@ -1,7 +1,13 @@
+import styles from "@/components/searchBar/searchBar.module.css";
+
 export default function SearchBar({ placeholder = "Buscar..." }) {
   return (
-    <label className="search-bar">
-      <span className="material-symbols-outlined">search</span>
+    <label className={styles.searchBar}>
+      <span
+        className={`material-symbols-outlined ${styles.materialSymbolsOutlined}`}
+      >
+        search
+      </span>
       <input type="search" placeholder={placeholder} />
     </label>
   );
