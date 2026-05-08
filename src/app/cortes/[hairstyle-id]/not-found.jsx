@@ -1,4 +1,4 @@
-import styles from "@/app/cortes/[hairstyle-id]/notFound.module.css";
+import styles from "@/app/cortes/[hairstyle-id]/not-found.module.css";
 import MediumButton from "@/components/MediumButton/MediumButton";
 
 export default function HairStyleNotFound() {
