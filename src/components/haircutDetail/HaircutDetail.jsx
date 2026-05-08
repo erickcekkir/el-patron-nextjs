@@ -1,5 +1,6 @@
 import Image from "next/image";
 import TagList from "@/components/tagList/TagList";
+import Tag from "../tag/Tag";
 
 export default function HaircutDetail({ haircut }) {
   return (
@@ -14,7 +15,11 @@ export default function HaircutDetail({ haircut }) {
           width={500}
           height={500}
         />
-        <TagList tags={haircut.tags} />
+        <TagList>
+          {haircut.tags.map((item, idx) => (
+            <Tag key={idx} name={item} />
+          ))}
+        </TagList>
       </div>
 
       <p>{haircut.description}</p>
