@@ -1,0 +1,54 @@
+.detailPage {
+  width: 100%;
+  max-width: 50rem;
+  margin-inline: auto;
+  padding: 5rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.detailPage h1 {
+  text-align: center;
+  width: 100%;
+}
+
+.detailPage p {
+  color: var(--silver-normal);
+  width: 100%;
+  max-width: 35rem;
+  text-align: center;
+}
+
+.detailSummary {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  max-width: 35rem;
+  align-items: flex-start;
+}
+
+.detailImg {
+  width: 45%;
+  max-width: 12rem;
+  height: auto;
+  object-fit: cover;
+  border-radius: 1rem;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .detailPage {
+    padding: 7rem 2rem 3rem;
+  }
+
+  .detailSummary {
+    max-width: 40rem;
+    gap: 2rem;
+  }
+
+  .detailImg {
+    max-width: 16rem;
+  }
+}

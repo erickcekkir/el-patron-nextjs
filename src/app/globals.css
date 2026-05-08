@@ -616,40 +616,6 @@ footer ul {
   color: var(--silver-normal);
 }
 
-/* DETAIL PAGE — /cortes/[hairstyle-id] */
-.detail-page {
-  width: 100%;
-  max-width: 50rem;
-  margin-inline: auto;
-  padding: 5rem 1rem 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.detail-page h1 {
-  text-align: center;
-  width: 100%;
-}
-
-.detail-summary {
-  display: flex;
-  gap: 1rem;
-  width: 100%;
-  max-width: 35rem;
-  align-items: flex-start;
-}
-
-.detail-img {
-  width: 45%;
-  max-width: 12rem;
-  height: auto;
-  object-fit: cover;
-  border-radius: 1rem;
-  flex-shrink: 0;
-}
-
 .tag-list {
   display: flex;
   flex-wrap: wrap;
@@ -671,13 +637,6 @@ footer ul {
 
 .tag:hover {
   background-color: var(--brown-normal-hover);
-}
-
-.detail-page p {
-  color: var(--silver-normal);
-  width: 100%;
-  max-width: 35rem;
-  text-align: center;
 }
 
 /* DESKTOP — a partir de 768px */
@@ -848,17 +807,7 @@ footer ul {
     border: none;
   }
 
-  .list-page,
-  .detail-page {
+  .list-page {
     padding: 7rem 2rem 3rem;
-  }
-
-  .detail-summary {
-    max-width: 40rem;
-    gap: 2rem;
-  }
-
-  .detail-img {
-    max-width: 16rem;
   }
 }
