@@ -1,5 +1,7 @@
 "use client";
 
+import MediumButton from "@/components/button/MediumButton";
+import LargeButton from "@/components/button/LargeButton";
 import CarouselButton from "@/components/carouselButton/CarouselButton";
 
 /* eslint-disable @next/next/no-img-element */
@@ -105,9 +107,7 @@ export default function Home() {
                 experientes que entendem que aparência é identidade. Venha nos
                 conhecer e saia como um verdadeiro patrão.
               </p>
-              <button type="button" className="medium-button">
-                Em breve...
-              </button>
+              <MediumButton text="Em breve..." />
             </div>
           </article>
         </section>
@@ -237,9 +237,7 @@ export default function Home() {
               required
               className="text-area-input"
             ></textarea>
-            <button type="submit" className="large-button">
-              Enviar
-            </button>
+            <LargeButton text="Enviar" />
           </form>
         </section>
 
