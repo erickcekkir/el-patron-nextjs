@@ -510,21 +510,6 @@ footer ul {
   justify-content: center;
 }
 
-/* LIST PAGES — /cortes & /equipe */
-.list-page {
-  width: 100%;
-  max-width: 70rem;
-  margin-inline: auto;
-  padding: 5rem 1rem 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.list-page h1 {
-  text-align: center;
-}
 /* DESKTOP — a partir de 768px */
 @media (min-width: 768px) {
   :root {
@@ -691,9 +676,5 @@ footer ul {
     width: 100%;
     min-height: 300px;
     border: none;
-  }
-
-  .list-page {
-    padding: 7rem 2rem 3rem;
   }
 }
