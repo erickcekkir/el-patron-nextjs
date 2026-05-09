@@ -1,5 +1,6 @@
 import "./globals.css";
 import Hamburger from "@/components/Hamburger/Hamburger";
+import Navbar from "@/components/Navbar/Navbar";
 
 export const metadata = {
   title: "El Patron",
@@ -7,6 +8,17 @@ export const metadata = {
     icon: "/imgs/elpatron.jpg",
   },
 };
+
+const pageSections = [
+  { link: "/#home", label: "Home" },
+  { link: "/#about", label: "Sobre nós" },
+  { link: "/#structure", label: "Estrutura" },
+  { link: "/#services", label: "Serviços" },
+  { link: "/#contact-us", label: "Fale conosco" },
+  { link: "/#localization", label: "Localização" },
+  { link: "/equipe", label: "Equipe" },
+  { link: "/cortes", label: "Cortes" },
+];
 
 export default function RootLayout({ children }) {
   return (
@@ -20,38 +32,7 @@ export default function RootLayout({ children }) {
       <body>
         <Hamburger />
         <header id="header-closed">
-          <nav>
-            <ul>
-              <li className="navbar-link">
-                <a href="/#home" /*onClick={toggleNavbar}*/>Home</a>
-              </li>
-              <li className="navbar-link">
-                <a href="/#about" /*onClick={toggleNavbar}*/>Sobre nós</a>
-              </li>
-              <li className="navbar-link">
-                <a href="/#structure" /*onClick={toggleNavbar}*/>Estrutura</a>
-              </li>
-              <li className="navbar-link">
-                <a href="/#services" /*onClick={toggleNavbar}*/>Serviços</a>
-              </li>
-              <li className="navbar-link">
-                <a href="/#contact-us" /*onClick={toggleNavbar}*/>
-                  Fale conosco
-                </a>
-              </li>
-              <li className="navbar-link">
-                <a href="/#localization" /*onClick={toggleNavbar}*/>
-                  Localização
-                </a>
-              </li>
-              <li className="navbar-link">
-                <a href="/equipe">Equipe</a>
-              </li>
-              <li className="navbar-link">
-                <a href="/cortes">Cortes</a>
-              </li>
-            </ul>
-          </nav>
+          <Navbar sections={pageSections} />
         </header>
 
         {children}
