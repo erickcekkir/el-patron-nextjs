@@ -159,16 +159,16 @@ src/
 
 ### Tela de Listagem de Cortes — `/cortes`
 
-![Protótipo mobile — Listagem de Cortes](img/Cortes.svg)
+![Protótipo mobile — Listagem de Cortes](public/imgs/Cortes.svg)
 
 ---
 
 ### Tela de Detalhe do Corte — `/cortes/[hairstyle-id]`
 
-![Protótipo mobile — Detalhe do Corte](img/Corte.svg)
+![Protótipo mobile — Detalhe do Corte](public/imgs/Corte.svg)
 
 ---
 
 ### Tela da Equipe — `/equipe`
 
-![Protótipo mobile — Equipe](img/Equipe.svg)
+![Protótipo mobile — Equipe](public/imgs/Equipe.svg)
