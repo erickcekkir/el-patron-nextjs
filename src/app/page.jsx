@@ -3,6 +3,7 @@
 import MediumButton from "@/components/MediumButton/MediumButton";
 import LargeButton from "@/components/LargeButton/LargeButton";
 import Carousel from "@/components/Carousel/Carousel";
+import styles from "@/app/page.module.css";
 
 /* eslint-disable @next/next/no-img-element */
 
@@ -51,15 +52,15 @@ function sendMessage(event) {
 export default function Home() {
   return (
     <>
-      <main>
-        <section id="home">
+      <main className={styles.main}>
+        <section className={styles.home}>
           <video
             width="640"
             autoPlay
             muted
             loop
             disablePictureInPicture
-            className="bg-video"
+            className={styles.bgVideo}
           >
             <source
               src="/videos/YTDown.com_YouTube_Fire-Barber-Shop-Promo-ATLMDERON_Media_GSc3uAm8rQ_001_1080p.mp4"
@@ -67,26 +68,26 @@ export default function Home() {
             />
           </video>
 
-          <div className="fade-bottom"></div>
-          <div className="overlay"></div>
+          <div className={styles.fadeBottom}></div>
+          <div className={styles.overlay}></div>
 
           <a href="">
             <img
               src="/imgs/elpatron.jpg"
-              className="core-img"
+              className={styles.coreImg}
               alt="Logo Grande"
             />
           </a>
         </section>
 
-        <section id="about">
-          <article className="about-article-card">
+        <section className={styles.about}>
+          <article className={styles.aboutArticleCard}>
             <img
               src="/imgs/Screenshot 2026-04-02 at 21.36.14.png"
-              className="core-img"
+              className={styles.coreImg}
               alt="Sobre nós"
             />
-            <div className="about-text-box">
+            <div className={styles.aboutTextBox}>
               <h2>Sobre nós</h2>
               <p>
                 A El Patron é uma barbearia que une tradição e estilo moderno.
@@ -99,20 +100,20 @@ export default function Home() {
           </article>
         </section>
 
-        <section id="structure">
+        <section className={styles.structure}>
           <h2>Estrutura e espaço físico</h2>
           <Carousel imagesList={imgList} />
         </section>
 
-        <section id="services">
+        <section className={styles.services}>
           <h2>Serviços</h2>
-          <section>
-            <article className="services-article-card">
+          <div>
+            <article className={styles.servicesArticleCard}>
               <img
                 src="/imgs/Screenshot 2026-04-02 at 21.26.09.png"
                 alt="Img 4"
               />
-              <div className="services-article-text-box">
+              <div className={styles.servicesArticleTextBox}>
                 <h3>Corte de Cabelo</h3>
                 <p>
                   Cortes modernos ou clássicos, adaptados ao seu estilo. Nossos
@@ -121,12 +122,12 @@ export default function Home() {
                 </p>
               </div>
             </article>
-            <article className="services-article-card">
+            <article className={styles.servicesArticleCard}>
               <img
                 src="/imgs/Screenshot 2026-04-02 at 21.26.17.png"
                 alt="Serviço de barba"
               />
-              <div className="services-article-text-box">
+              <div className={styles.servicesArticleTextBox}>
                 <h3>Barba</h3>
                 <p>
                   Aparagem e modelagem de barba com navalha, toalha quente e
@@ -135,7 +136,7 @@ export default function Home() {
                 </p>
               </div>
             </article>
-            <article className="services-article-card">
+            <article className={styles.servicesArticleCard}>
               <img
                 src="/imgs/Screenshot 2026-04-02 at 21.26.41.png"
                 alt="Combo corte e barba"
@@ -144,7 +145,7 @@ export default function Home() {
                 src="/imgs/Screenshot 2026-04-02 at 21.36.26.png"
                 alt="Combo corte e barba"
               />
-              <div className="services-article-text-box">
+              <div className={styles.servicesArticleTextBox}>
                 <h3>Combo Corte + Barba</h3>
                 <p>
                   O pacote completo para quem quer sair da barbearia totalmente
@@ -153,10 +154,10 @@ export default function Home() {
                 </p>
               </div>
             </article>
-          </section>
+          </div>
         </section>
 
-        <section id="contact-us">
+        <section className={styles.contactUs}>
           <h2>Fale conosco</h2>
           <form id="contact-form" onSubmit={sendMessage}>
             <input
@@ -165,7 +166,7 @@ export default function Home() {
               name="full-name"
               placeholder="Nome Completo*"
               required
-              className="text-input"
+              className={styles.textInput}
             />
             <input
               type="email"
@@ -173,28 +174,28 @@ export default function Home() {
               name="email"
               placeholder="Email*"
               required
-              className="text-input"
+              className={styles.textInput}
             />
             <input
               type="tel"
               name="phone"
               id="phone"
               placeholder="Telefone"
-              className="text-input"
+              className={styles.textInput}
             />
             <textarea
               name="message"
               id="message"
               placeholder="Mensagem*"
               required
-              className="text-area-input"
+              className={styles.textAreaInput}
             ></textarea>
             <LargeButton text="Enviar" />
           </form>
         </section>
 
-        <section id="localization">
-          <div className="localization-text">
+        <section className={styles.localization}>
+          <div className={styles.localizationText}>
             <h2>Localização</h2>
             <address>Avenida lider 2465B, São Paulo, Brazil</address>
           </div>
