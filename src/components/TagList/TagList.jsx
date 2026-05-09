@@ -1,4 +1,4 @@
-import styles from "@/components/tagList/tagList.module.css";
+import styles from "@/components/TagList/tagList.module.css";
 
 export default function TagList({ children }) {
   return <ul className={styles.tagList}>{children}</ul>;

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import TagList from "@/components/tagList/TagList";
+import TagList from "@/components/TagList/TagList";
 import Tag from "../Tag/Tag";
 import styles from "@/components/HaircutDetail/haircutDetail.module.css";
 
