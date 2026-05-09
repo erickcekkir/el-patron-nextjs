@@ -1,4 +1,4 @@
-import Card from "@/components/card/Card";
+import Card from "@/components/Card/Card";
 import CardList from "@/components/cardList/CardList";
 import { getTeam } from "@/lib/team";
 import styles from "@/app/equipe/page.module.css";

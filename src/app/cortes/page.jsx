@@ -1,4 +1,4 @@
-import Card from "@/components/card/Card";
+import Card from "@/components/Card/Card";
 import CardList from "@/components/cardList/CardList";
 import SearchBar from "@/components/searchBar/SearchBar";
 import { getHaircuts } from "@/lib/haircuts";
