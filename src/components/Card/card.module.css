@@ -3,6 +3,7 @@
   height: auto;
   aspect-ratio: 210 / 229;
   object-fit: cover;
+  object-position: center 20%;
   border-radius: 0;
   display: block;
 }
