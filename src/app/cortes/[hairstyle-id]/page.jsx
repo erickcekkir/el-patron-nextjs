@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import HaircutDetail from "@/components/haircutDetail/HaircutDetail";
+import HaircutDetail from "@/components/HaircutDetail/HaircutDetail";
 import { getHaircut } from "@/lib/haircuts";
 
 export default async function HairStyleDetailPage({ params }) {
