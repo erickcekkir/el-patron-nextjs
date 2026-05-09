@@ -1,6 +1,7 @@
 import Card from "@/components/card/Card";
 import CardList from "@/components/cardList/CardList";
 import { getTeam } from "@/lib/team";
+import styles from "@/app/equipe/page.module.css";
 
 export const metadata = {
   title: "Equipe",
@@ -10,7 +11,7 @@ export default async function TeamPage() {
   const members = await getTeam();
 
   return (
-    <main className="list-page">
+    <main className={styles.listPage}>
       <h1>Nossa Equipe</h1>
 
       <CardList>
