@@ -166,43 +166,6 @@ img {
 
 /*Hover nos botões*/
 
-.small-button:hover {
-  background-color: var(--red-normal-hover);
-}
-
-.small-button:active {
-  background-color: var(--red-normal-active);
-}
-
-.small-button {
-  transition:
-    background-color 0.2s ease,
-    transform 0.1s ease;
-}
-
-.small-button:active {
-  transform: scale(0.97);
-}
-
-.small-button {
-  border: none;
-  color: var(--blue-normal);
-  background-color: var(--red-normal);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  cursor: pointer;
-
-  padding: 1.5rem;
-  border-radius: 100%;
-
-  max-width: 3rem;
-  max-height: 3rem;
-  overflow-wrap: break-word;
-}
-
 .text-input,
 .text-area-input {
   background-color: white;

@@ -1,0 +1,50 @@
+.base {
+  cursor: pointer;
+
+  color: #f9fafb;
+  background-color: #cc2936;
+
+  overflow-wrap: break-word;
+
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.smallButton:hover {
+  background-color: var(--red-normal-hover);
+}
+
+.smallButton:active {
+  background-color: var(--red-normal-active);
+}
+
+.smallButton {
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.smallButton:active {
+  transform: scale(0.97);
+}
+
+.smallButton {
+  border: none;
+  color: var(--blue-normal);
+  background-color: var(--red-normal);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  padding: 1.5rem;
+  border-radius: 100%;
+
+  max-width: 3rem;
+  max-height: 3rem;
+  overflow-wrap: break-word;
+}
