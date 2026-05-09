@@ -12,6 +12,26 @@
 
 ---
 
+## Como Executar
+
+**Pré-requisitos:** Node.js 20+ e npm.
+
+```sh
+# 1. Clonar o repositório
+git clone https://github.com/<org>/el-patron-nextjs.git
+cd el-patron-nextjs
+
+# 2. Instalar dependências
+npm install
+
+# 3. Rodar em modo desenvolvimento (http://localhost:3000)
+npm run dev
+```
+
+> **Observação:** as telas `/cortes` e `/cortes/[hairstyle-id]` consomem hoje os mocks de `src/lib/haircuts.js`. Quando a [hairstyle-api](https://github.com/ggarabs/hairstyle-api) estiver disponível, a troca pelo `fetch` será pontual nas funções `getHaircuts()` e `getHaircut(id)`, sem impacto nas páginas.
+
+---
+
 ## Processo de Ideação — Migração para Next.js
 
 ### Contexto
@@ -74,12 +94,13 @@ Para evitar duplicação entre `/cortes` e `/equipe` (e preparar terreno para a 
 
 | Componente | Responsabilidade |
 | ---------- | ---------------- |
+| `Navbar` / `Hamburger` | Navbar global renderizada no `layout.jsx`; client component que controla o estado aberto/fechado via `useState` e adapta o comportamento ao breakpoint com `react-responsive` (`useMediaQuery`). O `Hamburger` recebe o handler de toggle por prop |
 | `Card` / `CardList` | Card de imagem com título e subtítulo opcional, encapsulado por um `Link` quando `href` é informado; usado tanto pela listagem de cortes quanto pela equipe |
 | `SearchBar` | Campo de busca com ícone Material Symbols — atualmente _stub_ visual em `/cortes` |
 | `HaircutDetail` | Composição da tela de detalhe (nome, imagem via `next/image`, tags e descrição) |
 | `Tag` / `TagList` | Lista horizontal de tags exibida na tela de detalhe |
-| `LargeButton` / `MediumButton` | Botões reutilizáveis com variantes de tamanho (CSS Modules) |
-| `CarouselButton` | Botão chevron do carrossel da home |
+| `LargeButton` / `MediumButton` / `SmallButton` | Botões reutilizáveis com variantes de tamanho (CSS Modules) |
+| `Carousel` / `CarouselButton` | Carrossel da home e botão chevron de navegação |
 | `ServiceCard` | Card da seção de serviços da home |
 
 ---
@@ -89,26 +110,30 @@ Para evitar duplicação entre `/cortes` e `/equipe` (e preparar terreno para a 
 ```DIG
 src/
 ├── app/
-│   ├── layout.jsx                 → Layout raiz (header, footer, metadata)
+│   ├── layout.jsx                 → Layout raiz (Navbar global, footer, metadata, Material Symbols)
 │   ├── globals.css                → Estilos globais portados do projeto original
-│   ├── Hamburger.jsx              → Botão da navbar mobile (client component)
-│   ├── page.jsx                   → Home (landing page original)
+│   ├── page.jsx                   → Home (landing page original, "use client")
+│   ├── page.module.css            → Estilos da home
 │   ├── equipe/
-│   │   └── page.jsx               → Tela da equipe (Server Component async)
+│   │   ├── page.jsx               → Tela da equipe (Server Component async)
+│   │   └── page.module.css
 │   └── cortes/
 │       ├── page.jsx               → Catálogo de cortes (Server Component async)
+│       ├── page.module.css
 │       └── [hairstyle-id]/
 │           ├── page.jsx           → Detalhe dinâmico de um corte
-│           └── not-found.jsx      → Página 404 customizada do segmento dinâmico
+│           ├── not-found.jsx      → Página 404 customizada do segmento dinâmico
+│           └── not-found.module.css
 ├── components/
-│   ├── card/                      → Card + card.module.css
-│   ├── cardList/                  → CardList + cardList.module.css
-│   ├── searchBar/                 → SearchBar (stub visual)
-│   ├── haircutDetail/             → HaircutDetail (composição da tela de detalhe)
-│   ├── tag/ , tagList/            → Tag e TagList
-│   ├── button/                    → LargeButton, MediumButton + styles.module.css
-│   ├── carouselButton/            → Botão chevron do carrossel da home
-│   └── serviceCard/               → Card da seção de serviços da home
+│   ├── Navbar/                    → Navbar global (client component, react-responsive)
+│   ├── Hamburger/                 → Botão da navbar mobile, recebe o toggle por prop
+│   ├── Card/ , CardList/          → Card e lista, usados em /cortes e /equipe
+│   ├── SearchBar/                 → SearchBar (stub visual em /cortes)
+│   ├── HaircutDetail/             → Composição da tela de detalhe
+│   ├── Tag/ , TagList/            → Tag e TagList exibidas no detalhe
+│   ├── LargeButton/ , MediumButton/ , SmallButton/  → Botões com variantes de tamanho
+│   ├── Carousel/ , CarouselButton/  → Carrossel da home e botão chevron
+│   └── ServiceCard/               → Card da seção de serviços da home
 └── lib/
     ├── haircuts.js                → getHaircuts(), getHaircut(id) — hoje devolvem mocks
     └── team.js                    → getTeam() — hoje devolve mocks
@@ -124,6 +149,7 @@ src/
 | `/cortes` — Listagem | Server Component `async` consumindo `getHaircuts()` (mock em `src/lib/haircuts.js`); layout final com `Card`/`CardList`, grade responsiva e `SearchBar` como _stub_; integração com a API pendente |
 | `/cortes/[hairstyle-id]` — Detalhe | Server Component `async` consumindo `getHaircut(id)`; renderiza `HaircutDetail` (nome, imagem via `next/image`, tags e descrição); 404 customizada (`not-found.jsx`) ativa via `notFound()`; consumo da API pendente |
 | `/equipe` — Equipe | Server Component `async` consumindo `getTeam()` (mock em `src/lib/team.js`); layout final reutilizando `Card`/`CardList` com `subtitle` para a especialidade; dados definitivos, tempo de casa e link para Instagram pendentes |
+| Navbar global | Extraída para o componente `Navbar` (client component) e renderizada no `layout.jsx`; o estado aberto/fechado vive em `useState` e é sincronizado ao breakpoint via `react-responsive` (`useMediaQuery`), substituindo a manipulação direta de DOM/`document.body.style` herdada do projeto original |
 | Camada de dados (`src/lib/`) | Funções `async` (`getHaircuts`, `getHaircut`, `getTeam`) já no contrato esperado da API; troca por `fetch` será pontual |
 | `hairstyle-api` | Em desenvolvimento no repositório externo; endpoints serão documentados conforme evoluem |
 
