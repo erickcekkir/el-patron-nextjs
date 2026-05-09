@@ -1,5 +1,5 @@
 import Card from "@/components/Card/Card";
-import CardList from "@/components/cardList/CardList";
+import CardList from "@/components/CardList/CardList";
 import SearchBar from "@/components/searchBar/SearchBar";
 import { getHaircuts } from "@/lib/haircuts";
 import styles from "@/app/cortes/page.module.css";
