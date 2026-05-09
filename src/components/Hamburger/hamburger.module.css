@@ -1,0 +1,14 @@
+.hamburgerButton {
+  position: fixed;
+  padding: 1rem;
+  width: 18vw;
+  max-width: 6rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .hamburgerButton {
+    display: none;
+  }
+}

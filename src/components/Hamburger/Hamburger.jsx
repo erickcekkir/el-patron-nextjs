@@ -1,5 +1,7 @@
 "use client";
 
+import styles from "@/components/Hamburger/hamburger.module.css";
+
 /* eslint-disable @next/next/no-img-element */
 
 function toggleNavbar() {
@@ -21,7 +23,7 @@ export default function Hamburger() {
   return (
     <img
       src="/imgs/burger-menu.png"
-      id="hamburger-button"
+      className={styles.hamburgerButton}
       onClick={toggleNavbar}
       alt=""
     />

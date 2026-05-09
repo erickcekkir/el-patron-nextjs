@@ -207,15 +207,6 @@ header {
   display: flex;
 }
 
-#hamburger-button {
-  position: fixed;
-  padding: 1rem;
-  width: 18vw;
-  max-width: 6rem;
-  cursor: pointer;
-  z-index: 1;
-}
-
 header a {
   width: 100%;
 }
@@ -515,10 +506,6 @@ footer ul {
   #home {
     position: relative;
     width: 100%;
-  }
-
-  #hamburger-button {
-    display: none;
   }
 
   .bg-video {

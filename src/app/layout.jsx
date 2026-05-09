@@ -1,5 +1,5 @@
 import "./globals.css";
-import Hamburger from "./Hamburger";
+import Hamburger from "@/components/Hamburger/Hamburger";
 
 export const metadata = {
   title: "El Patron",
@@ -54,8 +54,8 @@ export default function RootLayout({ children }) {
           </nav>
         </header>
 
-        {children} 
-        
+        {children}
+
         <footer>
           <ul>
             <li>
