@@ -53,7 +53,7 @@ export default function Home() {
   return (
     <>
       <main className={styles.main}>
-        <section className={styles.home}>
+        <section className={styles.home} id="home">
           <video
             width="640"
             autoPlay
@@ -80,7 +80,7 @@ export default function Home() {
           </a>
         </section>
 
-        <section className={styles.about}>
+        <section className={styles.about} id="about">
           <article className={styles.aboutArticleCard}>
             <img
               src="/imgs/Screenshot 2026-04-02 at 21.36.14.png"
@@ -100,12 +100,12 @@ export default function Home() {
           </article>
         </section>
 
-        <section className={styles.structure}>
+        <section className={styles.structure} id="structure">
           <h2>Estrutura e espaço físico</h2>
           <Carousel imagesList={imgList} />
         </section>
 
-        <section className={styles.services}>
+        <section className={styles.services} id="services">
           <h2>Serviços</h2>
           <div>
             <article className={styles.servicesArticleCard}>
@@ -157,7 +157,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={styles.contactUs}>
+        <section className={styles.contactUs} id="contact-us">
           <h2>Fale conosco</h2>
           <form id="contact-form" onSubmit={sendMessage}>
             <input
@@ -194,7 +194,7 @@ export default function Home() {
           </form>
         </section>
 
-        <section className={styles.localization}>
+        <section className={styles.localization} id="localization">
           <div className={styles.localizationText}>
             <h2>Localização</h2>
             <address>Avenida lider 2465B, São Paulo, Brazil</address>
