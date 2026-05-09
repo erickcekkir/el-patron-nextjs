@@ -1,5 +1,4 @@
 import "./globals.css";
-import Hamburger from "@/components/Hamburger/Hamburger";
 import Navbar from "@/components/Navbar/Navbar";
 
 export const metadata = {
@@ -30,10 +29,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <Hamburger />
-        <header id="header-closed">
-          <Navbar sections={pageSections} />
-        </header>
+        <Navbar sections={pageSections} />
 
         {children}
 
