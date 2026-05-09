@@ -139,7 +139,6 @@ ul {
 }
 
 input,
-button,
 textarea {
   appearance: none;
   -moz-appearance: none;
@@ -163,8 +162,6 @@ img {
   display: block;
   border-radius: 1rem;
 }
-
-/*Hover nos botões*/
 
 .text-input,
 .text-area-input {
