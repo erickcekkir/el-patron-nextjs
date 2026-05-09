@@ -2,9 +2,15 @@
 
 import MediumButton from "@/components/MediumButton/MediumButton";
 import LargeButton from "@/components/LargeButton/LargeButton";
-import CarouselButton from "@/components/carouselButton/CarouselButton";
+import Carousel from "@/components/Carousel/Carousel";
 
 /* eslint-disable @next/next/no-img-element */
+
+const imgList = [
+  "/imgs/Screenshot 2026-04-02 at 21.28.09.png",
+  "/imgs/Screenshot 2026-04-02 at 21.40.22.png",
+  "/imgs/Screenshot 2026-04-02 at 21.45.51.png",
+];
 
 function saveToLocalStorage(newData) {
   try {
@@ -14,25 +20,6 @@ function saveToLocalStorage(newData) {
   } catch (err) {
     console.error("Erro ao salvar no localStorage: ", err);
   }
-}
-
-function moveCarousel(direction) {
-  const imagesList = document.getElementsByClassName("carrousel-list")[0];
-
-  const elements = imagesList.getElementsByTagName("li");
-
-  let currIndex = Array.from(elements).findIndex((el) => el.id === "visible");
-  elements[currIndex].removeAttribute("id");
-  elements[(currIndex + direction + elements.length) % elements.length].id =
-    "visible";
-}
-
-function carrouselLeftClick() {
-  moveCarousel(-1);
-}
-
-function carrouselRightClick() {
-  moveCarousel(1);
 }
 
 function sendMessage(event) {
@@ -114,42 +101,7 @@ export default function Home() {
 
         <section id="structure">
           <h2>Estrutura e espaço físico</h2>
-          <div className="carrousel">
-            <CarouselButton
-              carouselFunction={carrouselLeftClick}
-              direction="left"
-            />
-            <ul className="carrousel-list">
-              <li className="carrousel-img">
-                <img
-                  src="/imgs/Screenshot 2026-04-02 at 21.27.30.png"
-                  alt="Foto 1"
-                />
-              </li>
-              <li className="carrousel-img" id="visible">
-                <img
-                  src="/imgs/Screenshot 2026-04-02 at 21.28.09.png"
-                  alt="Foto 2"
-                />
-              </li>
-              <li className="carrousel-img">
-                <img
-                  src="/imgs/Screenshot 2026-04-02 at 21.40.22.png"
-                  alt="Foto 3"
-                />
-              </li>
-              <li className="carrousel-img">
-                <img
-                  src="/imgs/Screenshot 2026-04-02 at 21.45.51.png"
-                  alt="Foto 4"
-                />
-              </li>
-            </ul>
-            <CarouselButton
-              carouselFunction={carrouselRightClick}
-              direction="right"
-            />
-          </div>
+          <Carousel imagesList={imgList} />
         </section>
 
         <section id="services">

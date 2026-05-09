@@ -337,32 +337,6 @@ section {
   display: flex;
 }
 
-.carrousel {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 65vw;
-  gap: 1rem;
-}
-
-.carrousel-list {
-  width: 100%;
-  height: 100%;
-}
-
-.carrousel-img {
-  display: none;
-  width: 100%;
-}
-
-.carrousel-img img {
-  width: 100%;
-}
-
-#visible {
-  display: flex;
-}
-
 /* #services — SERVIÇOS */
 #services {
   display: flex;
@@ -608,12 +582,6 @@ footer ul {
   /* Serviços: 3 cards lado a lado */
   #services > section {
     flex-direction: row;
-  }
-
-  .carrousel {
-    width: 90vw;
-    height: 75vh;
-    max-width: 70rem;
   }
 
   #contact-us {
